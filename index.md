@@ -119,7 +119,6 @@ If this is not the first time performing the verification protocol against this 
 
 	Client ==> Server [ E_kcs( SIGN_user(challenge value) ) ]
 	
-
 If the provider implements mail sender authentication, we use this information to confirm the authenticity of the message from the user to raise the difficulty of attacking the verification system.  As in Step 1, this information is stored and alerts are generated if anything changes unexpectedly.
 
 * If the provider publishes a **Sender Policy Framework**[^3] record, the provider server sending the message is verified as authentic according to the published policy.
@@ -135,8 +134,6 @@ If the provider implements mail sender authentication, we use this information t
 If the verification completes successfully, the certificate is signed by the endorsement service and returned to the user.  Once the user has collected the required number of endorsements from the network, the certificate may be published by the user in the directory under the verified address.
 
 ### 2.4 Other Authentication
-
-
 
 #### 2.4.1 OTR Keys
 
@@ -173,9 +170,9 @@ urltype=twitter,url=https://twitter.com/nymsuser/status/1234567
 
 Optionally upload to directory service which will confirm that the web verification information is valid and then make key available for queries for this twitter user: @nymsuser.
 
-##3. Directory Infrastructure
+## 3. Directory Infrastructure
 
-###3.1 Directory Service
+### 3.1 Directory Service
 
 When a user wants to obtain an authenticated public key for another user it contacts the directory service.  This service performs a function similar to existing OpenPGP key servers except that the keys it distributes have all been certified by the certification system described above.
 
@@ -189,7 +186,7 @@ In order to strengthen the value of this verification, the directory server whic
 
 Preventing the final server from knowing the identity of the user performing the query means that a dishonest directory server cannot effectively distribute bad keys without detection since the server cannot guess if the user has previously requested this key.  Additionally, users are protected from leaking too much information about who they are communicating with based on the keys they are requesting.
 
-###3.3 Certificate Revocation and Expiry
+### 3.3 Certificate Revocation and Expiry
 
 Revocation of certified keys published in the directory is a difficult problem which must be handled correctly to ensure that stale useless keys do not accumulate and so that the system can accommodate users who lose access to their private keys.
 
@@ -238,9 +235,6 @@ Here are some examples of the types of decisions that are in the scope of such a
  * Do manually imported keys have a higher priority than keys discovered in other ways.
  * Is outgoing mail signed by default?
  
-
-
-
 [^1]: http://en.wikipedia.org/wiki/Hardware_security_module
 [^2]: http://blog.cryptographyengineering.com/2012/05/if-wishes-were-horses-then-beggars.html
 [^3]: http://www.openspf.org/

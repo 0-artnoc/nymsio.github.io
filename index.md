@@ -46,7 +46,6 @@ Notaries in the **Nyms** system have two roles:
 
 Trust is distributed across a network of multiple notary systems by configuring relying parties (i.e. client agents) to require endorsements from multiple notaries.
 
-
 **Remote Verification**
 
 Notaries verify address information such as email addresses by performing a verification protocol.  The email verification protocol is described later in this document.
@@ -65,7 +64,6 @@ Email providers who endorse keys for their own users run a similar component cal
 
 Both the Remote and Provider verification services use a second service called Certificate Endorsement Service to actually sign the keys.
 
-
 ### 2.1 Certificate Endorsement Service
 
 ![image](/images/certification_service.png "Certification Service")
@@ -78,16 +76,15 @@ Providers who sign the certificates of their own users (**participating provider
 
 In both applications, the same component is used but it is configured with a different signing policy in each case.
 
-###2.2 Provider Verification Service
+### 2.2 Provider Verification Service
 
 ![image](/images/provider_verification.png "Provider Verification")
 
 The **Provider Verification Service** is run by a **participating provider** to allow users to have their certificates endorsed.  This service would use the user authentication system of the service provider to verify the legitimacy of endorsement requests.
 
-###2.3 Remote Verification Service
+### 2.3 Remote Verification Service
 
 ![image](/images/remote_verification.png "Remote Verification")
-
 
 The Remote Verification Service is run by each of the notaries to provide the ability to endorse certificates for users of providers who do not participate directly in the system.  For Email this service performs a verification protocol by sending and receiving an email message from the email address identified in the certificate to be endorsed.
 
@@ -208,7 +205,6 @@ As an obstacle to enumeration of the entire directory database or to search for 
     
 Additionally this raises the computational difficulty of enumerating the database remotely with mass queries.
 
-
 ## 4. Client Agent
 
 Clients in the Nyms system have a lot of responsibilities compared to clients of the traditional OpenPGP key server network which simply make HKS queries to a key server.
@@ -240,5 +236,4 @@ Here are some examples of the types of decisions that are in the scope of such a
 [^3]: http://www.openspf.org/
 [^4]: http://tools.ietf.org/html/rfc6376
 [^5]: http://tools.ietf.org/html/draft-kucherawy-dmarc-base-04
-
 
